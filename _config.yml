@@ -1,0 +1,61 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Kuang
+brief-intro: Algorithm Engineer&Data Mining Engineer  
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://consege.github.io" # the base hostname & protocol for your site
+
+permalink: /:year/:month/:day/:title/
+
+# other links
+#twitter_username: 
+facebook_username: jun.kuang.338
+github_username:  consege
+email: kjmd2d@sina.cn
+weibo_username: 1739397143
+zhihu_username: kuangjun-81
+linkedIn_username: 俊-匡-06191a11a
+dribbble_username:
+
+description_footer: This is why we play!
+
+# comments
+# two ways to comment, only choose one, and use your own short name
+# 三种评论插件，选一个就好了，使用自己的 short_name
+# 要关闭了 换成了友言 填id
+duoshuo_shortname: #KuangJun
+disqus_shortname: #gaohaoyang
+youyan_id: 2128441
+# statistic analysis 统计代码
+# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
+# xxxxx字符串
+baidu_tongji_id: dfba7352eb9e80caaf00d653c69735fc
+google_analytics_id: UA-92789840-1 # google 分析追踪id
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# port
+# port: 1234
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "\n\n\n\n"
+
+# paginate
+gems: [jekyll-paginate]
+paginate: 6

@@ -1,0 +1,111 @@
+---
+layout: post
+title: Linux常用命令
+categories: shell
+author: Kuang
+tags: shell
+
+---
+
+
+
+
+
+本文为一些常见的Linux命令(日常生活中遇到的就记录一下)，持续更新。。。
+
+
+
+
+
+### 安装deb包
+
+`dpkg -i XXX.deb #`
+
+### 修改环境变量
+
+`vim ~/.bashrc `
+
+### 设置系统默认jdk版本
+
+```shell
+update-alternatives --display java #查看java命令的所有可选命令
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_131/bin/java 300  
+
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_131/bin/javac 300  
+sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_131/bin/jar 300   
+sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jvm/jdk1.8.0_131/bin/javah 300   
+sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.8.0_131/bin/javap 300 
+
+sudo update-alternatives --config java
+
+```
+
+## 查看进程、杀死进程、启动进程
+
+* 查看进程 
+
+  ps a 现行终端机下所有程序，包括其他用户的程序
+
+  ps -A 显示所有程序
+
+  ps c 列出程序时，显示每个程序真正的指令名称，而不包含路径，参数或常驻服务的标示
+
+  ps aux | grep XXX 查找特定进程
+
+* 杀死进程
+
+  kill -9 ID
+
+  killall -9 NAME 
+
+
+
+## 解压
+
+* unzip
+
+-x <文件列表>  解压缩文件，但不包括指定的file文件
+
+-c 将解压缩的结果显示到屏幕上
+
+-f 更新现有文件
+
+-l 显示压缩文件内所包含的文件
+
+-p 与-c类似，但不会对字符做转换
+
+-t 检查压缩文件是否正确
+
+-u 与-f参数类似，但是除了更新现有文件外，也会将压缩文件中的其他文件解压缩到目录中
+
+-v 显示详细的信息
+
+-z 仅显示压缩文件的备注文字
+
+-a 文本文件做必要的字符转化
+
+-b 不要对文本文件做字符转换
+
+-C 文件名称区分大小写
+
+-d <目录> 指定文件解压缩后的目录
+
+
+
+## Ubuntu 没声音
+
+在我机器上，执行一下pulseaudio 就行了，然而ctrl+z后，又没声音了，至今不知道什么鬼，暂时先将就用一下
+
+## SSH登录远程服务器
+
+ssh -p port user@host
+
+## 安装软件意外终止导致的问题的解决方案
+安装软件过程如果意外终止，会导致如下问题:
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+此时，只需要删除相关的文件即可:
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+
+
