@@ -9,14 +9,14 @@
 title: Kuang
 brief-intro: Algorithm Engineer&Data Mining Engineer  
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://consege.github.io" # the base hostname & protocol for your site
+url: "https://CrisJk.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
 #twitter_username: 
 facebook_username: jun.kuang.338
-github_username:  consege
+github_username:  CrisJk
 email: kjmd2d@sina.cn
 weibo_username: 1739397143
 zhihu_username: kuangjun-81
