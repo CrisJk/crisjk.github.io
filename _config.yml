@@ -9,7 +9,7 @@
 title: Kuang
 brief-intro: Algorithm Engineer&Data Mining Engineer  
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://CrisJk.github.io" # the base hostname & protocol for your site
+url: "http://CrisJk.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
@@ -21,7 +21,7 @@ email: kjmd2d@sina.cn
 weibo_username: 1739397143
 zhihu_username: kuangjun-81
 linkedIn_username: 俊-匡-06191a11a
-dribbble_username:
+#dribbble_username:
 
 description_footer: This is why we play!
 
