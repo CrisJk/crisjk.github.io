@@ -325,10 +325,10 @@ LDA模型中的隐藏变量为$$\theta , \beta , z$$ ，模型的参数为$$\alp
 
 
 [1]: http://www.cnblogs.com/pinard/p/6831308.html
-[2]:http://www.cnblogs.com/pinard/p/6625739.html
-[3]:https://zh.wikipedia.org/wiki/%E9%9A%90%E5%90%AB%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%88%86%E5%B8%83
-[4]:https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/LDA_model.png
-[5]:https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/600px-Finance_Markov_chain_example_state_space.svg.png
-[6]:http://www.cnblogs.com/pinard/p/6638955.html
-[7]:http://www.cnblogs.com/pinard/p/6873703.html
-[8]:http://images2015.cnblogs.com/blog/1042406/201705/1042406-20170518154844557-29824317.png
+[2]: http://www.cnblogs.com/pinard/p/6625739.html
+[3]: https://zh.wikipedia.org/wiki/%E9%9A%90%E5%90%AB%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%88%86%E5%B8%83
+[4]: https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/LDA_model.png
+[5]: https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/600px-Finance_Markov_chain_example_state_space.svg.png
+[6]: http://www.cnblogs.com/pinard/p/6638955.html
+[7]: http://www.cnblogs.com/pinard/p/6873703.html
+[8]: http://images2015.cnblogs.com/blog/1042406/201705/1042406-20170518154844557-29824317.png
