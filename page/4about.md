@@ -16,7 +16,7 @@ type: page
 
 ## 联系我
 
-* GitHub：
+* GitHub：CrisJk
 * email：kjmd2d@sina.cn
 * [Weibo](http://weibo.com/1739397143/)
 * [知乎](https://www.zhihu.com/people/kuangjun-81)
