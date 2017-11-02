@@ -4,6 +4,7 @@ title: LDA主题模型的简要概括
 autour: Kuang
 tags: LDA
 categories: ML 
+comments: true
 ---
 
 
