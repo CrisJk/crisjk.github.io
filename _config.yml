@@ -30,8 +30,8 @@ description_footer: This is why we play!
 # 三种评论插件，选一个就好了，使用自己的 short_name
 # 要关闭了 换成了友言 填id
 duoshuo_shortname: #KuangJun
-disqus_shortname: #gaohaoyang
-youyan_id: 2128441
+disqus_shortname: junkuang
+youyan_id: #2128441
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
