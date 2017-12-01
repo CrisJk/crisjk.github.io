@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Relation Extraction
-categories: knowledge graph
-tags: Raltion Extraction
+categories: knowledgeGraph
+tags: RaltionExtraction
 comments: true
 author: Kuang
 ---
