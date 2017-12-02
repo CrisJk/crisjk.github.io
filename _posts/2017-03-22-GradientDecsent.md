@@ -3,7 +3,7 @@ layout: post
 title: 梯度下降
 categories: ML
 author: Kuang
-tags: ML
+tags: optimization
 
 ---
 
