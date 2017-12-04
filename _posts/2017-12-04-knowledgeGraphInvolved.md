@@ -2,7 +2,7 @@
 layout: post
 author: Kuang
 title: Knowledge Graph 相关数据集、人员、会议等整理
-Categories: knowledgeGraph
+categories: knowledgeGraph
 tags: Others
 ---
 看论文时涉及到的一些知识图谱相关的研究人员、工具、数据集等，顺手整理出来，持续更新中~
