@@ -18,7 +18,7 @@ tags: Others
 
 * [复旦大学自然语言处理实验室][3]
 * [伦敦大学 Sebastian riedel][7]
-* [斯坦福NaturalLanguageProcessingGroup][7]
+* [斯坦福NaturalLanguageProcessingGroup][8]
 
 
 ### Conference

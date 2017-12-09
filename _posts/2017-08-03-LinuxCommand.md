@@ -109,3 +109,28 @@ sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
 
 
+
+## Git
+
+### 配置SSH
+
+```  shell
+#检查是否已经存在id_rsa.pub或者是否已经存在id_dsa.pub
+cd ~/.ssh
+ls
+#若不存在，则新建一个SSH key
+ssh-keygen -t rsa -C "your_email@example.com"
+#接着会出现让你输入保存SSH key的文件名，以及让你输入密码，一般直接回车使用默认
+#在github网站上新建一个SSH key,将.ssh/id_rsa.pub中的内容复制进去
+#本地配置
+git config --global user.name "your name"
+git config --global user.email "your_email@youremail.com"
+```
+
+### 避免每次push都需要输入用户名密码
+
+在使用git bash时，每次push都要输入用户名密码，很是麻烦，为了一劳永逸
+
+只需输入命令  git config --global credential.helper store 即可
+
+这样只要第一次输入用户名密码，后面每次都不需要输入了。
