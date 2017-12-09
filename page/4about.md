@@ -17,7 +17,7 @@ type: page
 ## 联系我
 
 * GitHub：CrisJk
-* email：kjmd2d@sina.cn
+* email：junkuang163@163.com
 * [Weibo](http://weibo.com/1739397143/)
 * [知乎](https://www.zhihu.com/people/kuangjun-81)
 * [Facebook](https://www.facebook.com/jun.kuang.338)
