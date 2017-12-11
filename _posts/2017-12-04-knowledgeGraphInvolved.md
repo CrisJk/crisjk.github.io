@@ -52,7 +52,7 @@ MINIPAR 依存树分析工具
 
 [Collins Parser][13]
 
-[Berkeley Parser][http://nlp.cs.berkeley.edu/software.shtml]
+[Berkeley Parser](http://nlp.cs.berkeley.edu/software.shtml)
 
 [1]: http://nlp.csai.tsinghua.edu.cn/~lzy/
 [2]: http://nlp.suda.edu.cn/~gdzhou/about-cn.html
