@@ -3,7 +3,7 @@ layout: post
 author: Kuang
 title: 现代硬件架构下的并行Hash Join算法2
 categories: Database
-tags: join
+tags: Join
 ---
 
 论文Cagri Balkesen, Jens Teubner, Gustavo Alonso, M. Tamer Özsu: Main-memory hash joins on multi-core CPUs: Tuning to the underlying hardware. ICDE 2013: 362-373
