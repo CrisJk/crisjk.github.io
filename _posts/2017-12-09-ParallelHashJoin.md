@@ -1,10 +1,10 @@
 ---
 layout: post 
-title: 现代CPU架构下的并行Hash Join算法
+title: 现代硬件架构下的并行Hash Join算法
 categories: Database
 tags: Join
 author: Kuang
----
+---	
 
 
 读论文 Spyros Blanas, Yinan Li, Jignesh M. Patel: Design and evaluation of main memory hash join algorithms for multi-core CPUs. SIGMOD Conference 2011: 37-48
