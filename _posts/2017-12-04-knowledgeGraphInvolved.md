@@ -19,6 +19,7 @@ tags: Others
 * [伦敦大学 Sebastian Riedel][7]
 * [斯坦福NaturalLanguageProcessingGroup][8]
 * [中科院自动化研究所模式识别国家重点实验室][10]
+* [Sebastian Riedel](https://www.researchgate.net/profile/Sebastian_Riedel4)
 
 
 ### Conference
