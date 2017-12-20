@@ -143,12 +143,12 @@ git config --global user.email "your_email@youremail.com"
 
 ```shell
 # 临时一个终端(ss)
-export http_proxy="socks5:127.0.0.1:1080"
-export https_proxy="socks5:127.0.0.1:1080"
+export http_proxy="socks5://127.0.0.1:1080"
+export https_proxy="socks5://127.0.0.1:1080"
 
 #写入.bashrc ， 每次都跟随系统代理
-export http_proxy="socks5:127.0.0.1:1080"
-export https_proxy="socks5:127.0.0.1:1080"
+export http_proxy="socks5://127.0.0.1:1080"
+export https_proxy="socks5://127.0.0.1:1080"
 source ~/.bashrc
 ```
 
