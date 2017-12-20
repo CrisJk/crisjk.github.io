@@ -134,3 +134,21 @@ git config --global user.email "your_email@youremail.com"
 只需输入命令  git config --global credential.helper store 即可
 
 这样只要第一次输入用户名密码，后面每次都不需要输入了。
+
+
+
+## 代理
+
+### 让终端走代理
+
+```shell
+# 临时一个终端(ss)
+export http_proxy="socks5:127.0.0.1:1080"
+export https_proxy="socks5:127.0.0.1:1080"
+
+#写入.bashrc ， 每次都跟随系统代理
+export http_proxy="socks5:127.0.0.1:1080"
+export https_proxy="socks5:127.0.0.1:1080"
+source ~/.bashrc
+```
+
