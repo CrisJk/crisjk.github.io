@@ -152,3 +152,13 @@ export https_proxy="socks5://127.0.0.1:1080"
 source ~/.bashrc
 ```
 
+## Docker
+### 查看正在使用的端口
+```shell
+sudo docker ps
+``` 
+### 杀掉一个进程
+```shell
+sudo docker kill container
+```
+
