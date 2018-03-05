@@ -92,10 +92,6 @@ sudo update-alternatives --config java
 
 
 
-## Ubuntu 没声音
-
-在我机器上，执行一下pulseaudio 就行了，然而ctrl+z后，又没声音了，至今不知道什么鬼，暂时先将就用一下
-
 ## SSH登录远程服务器
 
 ssh -p port user@host
@@ -139,7 +135,7 @@ git config --global user.email "your_email@youremail.com"
 ```shell
 git rebase -i commitID
 git push -f
-
+```
 
 详见 [Git提交历史的修改删除合并等实践](http://blog.codingplayboy.com/2017/12/13/git-commit-operate/)
 
