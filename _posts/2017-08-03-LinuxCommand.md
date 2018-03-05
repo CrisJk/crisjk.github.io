@@ -141,7 +141,7 @@ git rebase -i commitID
 
 git push -f
 
-详见[Git提交历史的修改删除合并等实践][http://blog.codingplayboy.com/2017/12/13/git-commit-operate/]
+详见[Git提交历史的修改删除合并等实践](http://blog.codingplayboy.com/2017/12/13/git-commit-operate/)
 
 
 ## 代理
