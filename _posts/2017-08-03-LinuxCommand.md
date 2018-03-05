@@ -138,8 +138,8 @@ git config --global user.email "your_email@youremail.com"
 ### 修改、合并、删除历史提交
 ```shell
 git rebase -i commitID
-
 git push -f
+
 
 详见 [Git提交历史的修改删除合并等实践](http://blog.codingplayboy.com/2017/12/13/git-commit-operate/)
 
