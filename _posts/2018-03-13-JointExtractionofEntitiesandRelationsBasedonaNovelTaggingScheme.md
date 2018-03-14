@@ -7,8 +7,8 @@ tags: RaltionExtraction
 ---
 
 > 从非结构化的文本中获取三元组关系，通常有两种做法:
-一种方法是将实体识别和关系抽取当做两个任务，串行执行。这种方法的好处在于可以简化问题，并且每个模块可以更加灵活，但这种方法忽略了这两个子任务之间的联系，并且实体识别的误差会传播到关系提取模块，造成整体效果的下降。
-另一种方法是使用一个模型对实体识别和关系提取联合进行学习，现有工作中，很多联合抽取的模型都是给予特征工程的，这就意味着需要手工的选择特征，这对算法工程师是个很大的考验。同时，基于特征工程的方法依赖于自然语言处理工具，这意味着自然语言处理工具的错误会传播到算法模型。当然，近期也有人提出基于神经网络的方法(Makoto Miwa and Mohit Bansal. 2016. End-to-end re- lation extraction using lstms on sequences and tree structures. In Proceedings of the 54rd Annual Meet- ing of the Association for Computational Linguis- tics.)。尽管他们提出的方法能用一个共享参数的模型同时解决实体和关系提取问题，但是其实质上仍然是将这两个任务分开进行，因此会产生一些冗余的信息。
+> 一种方法是将实体识别和关系抽取当做两个任务，串行执行。这种方法的好处在于可以简化问题，并且每个模块可以更加灵活，但这种方法忽略了这两个子任务之间的联系，并且实体识别的误差会传播到关系提取模块，造成整体效果的下降。
+> 另一种方法是使用一个模型对实体识别和关系提取联合进行学习，现有工作中，很多联合抽取的模型都是给予特征工程的，这就意味着需要手工的选择特征，这对算法工程师是个很大的考验。同时，基于特征工程的方法依赖于自然语言处理工具，这意味着自然语言处理工具的错误会传播到算法模型。当然，近期也有人提出基于神经网络的方法(Makoto Miwa and Mohit Bansal. 2016. End-to-end re- lation extraction using lstms on sequences and tree structures. In Proceedings of the 54rd Annual Meet- ing of the Association for Computational Linguis- tics.)。尽管他们提出的方法能用一个共享参数的模型同时解决实体和关系提取问题，但是其实质上仍然是将这两个任务分开进行，因此会产生一些冗余的信息。
 
 
 
@@ -82,7 +82,7 @@ tags: RaltionExtraction
 
 ![](https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/JointExtractionLossFunction.png)
 
-$| \mathbb D|$ 是训练集的大小，$L_j$是句子$x_j$的长度，$y_t^{(j)}$是句子$x_j$中单词t的label，$p_t^{(j)}$ 是正则化的实体标注预测概率值，$I(O)$ 是一个"开关函数"，用来区分tag是否是'O'(即Other)。其表达式如下:
+$\vert \mathbb D\vert$ 是训练集的大小，$L_j$是句子$x_j$的长度，$y_t^{(j)}$是句子$x_j$中单词t的label，$p_t^{(j)}$ 是正则化的实体标注预测概率值，$I(O)$ 是一个"开关函数"，用来区分tag是否是'O'(即Other)。其表达式如下:
 
 ![](https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/switchingFunction.png)
 
