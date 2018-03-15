@@ -58,7 +58,7 @@ tags: RaltionExtraction
 
 * 双向LSTM编码层
 
-  Word embedding层之后是两个平行的的LSTM层，即前向和后向的LSTM层，由一系列循环神经子网组成。每一个时间步长是一个LSTM记忆块，每一个隐层向量$$h_t$$ 是由上一时刻的隐层向量$h_{t-1}$ 、cell向量$c_{t-1}$ 以及当前输入的词向量$W_t$计算得到，如图2(b)所示。计算公式如下:
+  Word embedding层之后是两个平行的的LSTM层，即前向和后向的LSTM层，由一系列循环神经子网组成。每一个时间步长是一个LSTM记忆块。LSTM记忆块从左到右分别是forgate-gate、input-gate和output-gate每一个隐层向量$$h_t$$ 是由上一时刻的隐层向量$h_{t-1}$ 、细胞状态$c_{t-1}$ 以及当前输入的词向量$W_t$计算得到，如图2(b)所示。计算公式如下:
 
   ![](https://raw.githubusercontent.com/CrisJk/SomePicture/master/blog_picture/formula1.png)
 
