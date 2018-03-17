@@ -149,10 +149,17 @@ git push -f
 export http_proxy="socks5://127.0.0.1:1080"
 export https_proxy="socks5://127.0.0.1:1080"
 
+
 #写入.bashrc ， 每次都跟随系统代理
 export http_proxy="socks5://127.0.0.1:1080"
 export https_proxy="socks5://127.0.0.1:1080"
 source ~/.bashrc
+```
+
+### 路由追踪
+```shell
+traceroute ip
+
 ```
 
 ## Docker
