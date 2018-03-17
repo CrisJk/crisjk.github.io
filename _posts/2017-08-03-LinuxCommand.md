@@ -58,7 +58,13 @@ sudo update-alternatives --config java
 
   killall -9 NAME 
 
-
+### 查看服务运行状态
+```shell
+#查看某个服务的状态
+service servicename status
+#查看所有服务
+service --status-all
+```
 
 ## 解压
 
