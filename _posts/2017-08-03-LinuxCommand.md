@@ -93,8 +93,39 @@ sudo update-alternatives --config java
 
 
 ## SSH登录远程服务器
+A机器登录到B机器
+首先在A机器生成公钥私钥对
+```shell
+ssh-keygen -t rsa
+```
+然后在B机器建立.shh目录
+```shell
+mkdir /root/.ssh
+```
+将A机器上生成的公钥复制到B机器
+```shell
+scp -P port ~/.ssh/id_rsa.pub root@ip:/root/.ssh/authorized_keys
+```
+B机器更改authorized_keys权限
+```shell
+chmod 600 /root/.ssh/authorized_keys
+```
 
+最后测试能否登录
 ssh -p port user@host
+
+> 如果出现以下问题，说明之前已经登录过B机器，但是B机器发生了一些改变，导致无法登录
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:D6IzPjNVZ1vqaOWXJb+R6NEjNt/l69PBbqAtL6Yq/40.
+Please contact your system administrator.
+此时只需要删除A机器上的known_hosts即可：rm -rf ~/.ssh/known_hosts
+
 
 ## 安装软件意外终止导致的问题的解决方案
 安装软件过程如果意外终止，会导致如下问题:
