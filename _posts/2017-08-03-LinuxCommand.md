@@ -192,6 +192,68 @@ export http_proxy="socks5://127.0.0.1:1080"
 export https_proxy="socks5://127.0.0.1:1080"
 source ~/.bashrc
 ```
+>注:这个周末shadowsocks坏了，重装了一下vps系统，结果ubuntu上不去外网了，折腾了一天，最后发现是原来的shadowsocks-qt5出了问题，更新到最新就好了，这期间试过polipo等工具都不好用，还是上述方法好用
+
+###shadowsocks配置
+(该部分来自博客[](https://blog.whsir.com/post-274.html))
+ssh到vps后，执行如下命令
+```shell
+yum -y install wget
+wget --no-check-certificate http://blog.whsir.com/uploads/ss.sh
+chmod +x ss.sh
+./ss.sh 2>&1 | tee shadowsocks.log
+```
+运行成功会有如下提示
+#############################################################
+# One click Install Shadowsocks(Python)
+# Intro: http://blog.whsir.com
+#
+# Author: whsir
+#
+#############################################################
+
+Please input password for shadowsocks:
+(Default password: whsir):
+安装完成后显示内容如下：
+
+Congratulations, ss install completed!
+Your Server IP:your_server_ip
+Your Server Port:443
+Your Password:your_password
+Your Local IP:127.0.0.1
+Your Local Port:1080
+Your Encryption Method:aes-256-cfb
+
+Welcome to visit:blog.whsir.com
+Enjoy it!
+```
+卸载方法:
+./ss.sh uninstall
+多端口多密码配置：
+```shell
+#vi /etc/shadowsocks.json
+```
+配置
+```shell
+{
+"server":"0.0.0.0",
+"local_address":"127.0.0.1",
+"local_port":1080,
+"port_password":{
+"7788":"password0",
+"7789":"password1",
+"7790":"password2"
+},
+"timeout":300,
+"method":"aes-256-cfb",
+"fast_open": false
+}
+```
+需要用到的命令：
+启动：service shadowsocks start
+停止：service shadowsocks stop
+重启：service shadowsocks restart
+状态：service shadowsocks status
 
 ### 路由追踪
 ```shell
@@ -208,4 +270,5 @@ sudo docker ps
 ```shell
 sudo docker kill container
 ```
+
 
