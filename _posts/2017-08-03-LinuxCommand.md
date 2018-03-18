@@ -340,7 +340,7 @@ WScript.quit
 
 Android端配置:
 datashard、parityshard、nocomp、key、crypt，配置的时候保证客户端和服务端一致即可。
-[示例](https://raw.githubusercontent.com/CrisJk/crisjk.github.io/master/resource/pictures/kcp_android.png)
+[示例](https://raw.githubusercontent.com/CrisJk/crisjk.github.io/master/resource/pictures/Shadowsocks_Android_kcptun_2-550x978.png)
 
 
 ### 路由追踪
