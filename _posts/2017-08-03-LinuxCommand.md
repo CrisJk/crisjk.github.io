@@ -298,7 +298,7 @@ windows客户端配置
 载kcptun-windows-amd64-20160922
 
 下载后解压到一个指定的文件夹内，在此文件夹内创建文本文件，内容如下：
-
+```shell
 Dim RunKcptun
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set WshShell = WScript.CreateObject("WScript.Shell")
@@ -320,7 +320,7 @@ Set WshShell = Nothing
 Set fso = Nothing
 '退出脚本
 WScript.quit
-
+```
 保存退出，将此文本文件重命名为run.vbs，这个run.vbs就是客户端的启动程序；
 >注意：这里的12300为你自己起的一个端口，这个12300和之前所有端口都没关系，不能和之前的端口号重复！！！2006是你之前的监听端口，key为之前设置的test！！！
 
