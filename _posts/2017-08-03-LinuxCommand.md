@@ -50,7 +50,7 @@ sudo update-alternatives --config java
 
   ps c 列出程序时，显示每个程序真正的指令名称，而不包含路径，参数或常驻服务的标示
 
-  ps aux | grep XXX 查找特定进程
+  ps aux $\vert$ grep XXX 查找特定进程
 
 * 杀死进程
 
