@@ -195,7 +195,7 @@ source ~/.bashrc
 >注:这个周末shadowsocks坏了，重装了一下vps系统，结果ubuntu上不去外网了，折腾了一天，最后发现是原来的shadowsocks-qt5出了问题，更新到最新就好了，这期间试过polipo等工具都不好用，还是上述方法好用
 
 ###shadowsocks配置
-(该部分来自博客[](https://blog.whsir.com/post-274.html))
+(该部分来自博客[https://blog.whsir.com/post-274.html](https://blog.whsir.com/post-274.html) )
 ssh到vps后，执行如下命令
 ```shell
 yum -y install wget
@@ -254,6 +254,94 @@ Enjoy it!
 停止：service shadowsocks stop
 重启：service shadowsocks restart
 状态：service shadowsocks status
+
+
+###　kcptun加速
+该部分来自博客[https://blog.whsir.com/post-298.html](https://blog.whsir.com/post-298.html)
+```shell
+#mkdir /root/kcptun
+
+#cd /root/kcptun
+
+#wget https://github.com/xtaci/kcptun/releases/download/v20160922/kcptun-linux-386-20160922.tar.gz
+
+#tar -zxvf kcptun-linux-386-20160922.tar.gz
+```
+创建启动服务：
+
+#vi /root/kcptun/start-kcptun.sh
+```shell
+#!/bin/bash
+cd /root/kcptun/
+./server_linux_386 -l :2006 -t 23.83.229.171:7777 -key test -mtu 1400 -sndwnd 2048 -rcvwnd 2048 -mode fast2 > kcptun.log 2>&1 &
+echo "Kcptun started"
+```
+监听端口为2006，这个数字是你自己起的，7777为你当然的ss端口
+创建关闭服务：
+
+```shell
+#vi /root/kcptun/stop-kcptun.sh
+killall server_linux_386
+echo "Kcptun stoped"
+```
+
+启动服务
+```shell
+#sh /root/kcptun/start-kcptun.sh
+```
+配置开机自启动
+```shell
+echo "sh /root/kcptun/start-kcptun.sh" >> /etc/rc.local
+```
+
+windows客户端配置
+载kcptun-windows-amd64-20160922
+
+下载后解压到一个指定的文件夹内，在此文件夹内创建文本文件，内容如下：
+
+Dim RunKcptun
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set WshShell = WScript.CreateObject("WScript.Shell")
+'获取文件路径
+currentPath = fso.GetFile(Wscript.ScriptFullName).ParentFolder.Path & "\"
+'软件运行参数
+exeConfig = "client_windows_amd64.exe -l :12300 -r 23.83.229.171:2006 -key test -mtu 1400 -sndwnd 256 -rcvwnd 2048 -mode fast2 -dscp 46"
+'日志文件
+logFile = "kcptun.log"
+'拼接命令行
+cmdLine = "cmd /c " & currentPath & exeConfig & " > " & currentPath & logFile & " 2>&1"
+'启动软件
+WshShell.Run cmdLine, 0, False
+'等待1秒
+'WScript.Sleep 1000
+'打印运行命令
+'Wscript.echo cmdLine
+Set WshShell = Nothing
+Set fso = Nothing
+'退出脚本
+WScript.quit
+
+保存退出，将此文本文件重命名为run.vbs，这个run.vbs就是客户端的启动程序；
+>注意：这里的12300为你自己起的一个端口，这个12300和之前所有端口都没关系，不能和之前的端口号重复！！！2006是你之前的监听端口，key为之前设置的test！！！
+
+创建一个关闭程序：
+
+新建文本文件，内容为：taskkill /f /im client_windows_amd64.exe 保存退出，重命名为stop.bat
+
+设置shadowsocks：
+
+服务器IP为127.0.0.1
+
+服务器端口为12300
+
+密码为你的ss密码（和原来你用ss时候的密码一样）
+
+双击run.vbs启动服务，服务启动后，打开任务管理器可在进程中看到此服务，即表示服务启动完成：
+
+Android端配置:
+datashard、parityshard、nocomp、key、crypt，配置的时候保证客户端和服务端一致即可。
+
+
 
 ### 路由追踪
 ```shell
