@@ -359,4 +359,17 @@ sudo docker ps
 sudo docker kill container
 ```
 
+##端口
+### 查看端口占用情况
+```shell
+sudo lsof -i
+#查看指定端口
+sudo lsof -i :端口号
+#查看已经连接的服务端口
+netstat -a
+查看所有的服务端口（LISTEN，ESTABLISHED）
+netstat -ap
+```
+
+
 
