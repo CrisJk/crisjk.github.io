@@ -5,6 +5,11 @@ author: Kuang
 categories: Math
 tag: Marcov
 ---
+
+数据科学算法基础之马尔可夫链
+
+
+
 ### 0 链式规则
 
 设E,F和C都是事件,有:
