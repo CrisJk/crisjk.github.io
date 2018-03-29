@@ -7,7 +7,7 @@ author: Chen
 ---
 
 
-## Agriculture_KnowledgeGraph
+Agriculture_KnowledgeGraph
 demo：http://39.108.100.170:8000 
 github：https://github.com/qq547276542/Agriculture_KnowledgeGraph 
 欢迎star&fork~
@@ -67,7 +67,7 @@ github：https://github.com/qq547276542/Agriculture_KnowledgeGraph
 5. 实体的分类算法见下文。
 
 HudongItem
-image
+![](https://raw.githubusercontent.com/qq547276542/blog_image/master/agri/1.png)
 
 #### 页面分类
 分类器：KNN算法
@@ -85,6 +85,7 @@ image
 * 上面四个部分的相似度的加权和为最终的两个页面的相似度，权值由向量weight控制，通过10折叠交叉验证+网格搜索得到
 
 #### Labels：（命名实体的分类）
+
 
 | Label	| NE Tags	| Example
 | -------| :-----: | :-----: |
