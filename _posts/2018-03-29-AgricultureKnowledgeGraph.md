@@ -12,6 +12,12 @@ demo：http://39.108.100.170:8000
 github：https://github.com/qq547276542/Agriculture_KnowledgeGraph 
 欢迎star&fork~
 
+
+
+
+
+
+
 ###  命名实体识别
 进入主页面，输入文本，即可看到以下命名实体和分词的结果（确保django和neo4j都处于开启状态）：
 
