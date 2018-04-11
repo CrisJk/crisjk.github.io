@@ -121,16 +121,16 @@ chmod 600 /root/.ssh/authorized_keys
 ssh -p port user@host
 
 > 如果出现以下问题，说明之前已经登录过B机器，但是B机器发生了一些改变，导致无法登录
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the RSA key sent by the remote host is
-SHA256:D6IzPjNVZ1vqaOWXJb+R6NEjNt/l69PBbqAtL6Yq/40.
-Please contact your system administrator.
-此时只需要删除A机器上的known_hosts即可：rm -rf ~/.ssh/known_hosts
+> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+> @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+> IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+> Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+> It is also possible that a host key has just been changed.
+> The fingerprint for the RSA key sent by the remote host is
+> SHA256:D6IzPjNVZ1vqaOWXJb+R6NEjNt/l69PBbqAtL6Yq/40.
+> Please contact your system administrator.
+> 此时只需要删除A机器上的known_hosts即可：rm -rf ~/.ssh/known_hosts
 
 
 ## 安装软件意外终止导致的问题的解决方案
@@ -176,6 +176,27 @@ git push -f
 
 详见 [Git提交历史的修改删除合并等实践](http://blog.codingplayboy.com/2017/12/13/git-commit-operate/)
 
+### 撤销未提交的add以及撤销未push的commit
+
+[Git 工具 - 重置揭密](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86)
+
+Git中的三棵重要的树: 
+
+* Working Directory :可以理解为本地目录，你在这上面工作
+* Index: 通过git add 命令将Working Directory上的改动复制过来
+* HEAD: 通过git commit命令将Index中的改动提交过来
+
+reset命令有3种:
+
+* git reset --soft HEAD:　该命令只是将分支移动到指定的HEAD上，Index和working directory 均不发生变化，可以再次commit
+* git reset --mixed HEAD: 该命令是reset的默认行为，即不指定参数时默认是使用mixed参数,　使用该命令改动HEAD和Index，即回到add之前的状态
+
+*　git reset --hard HEAD: **谨慎使用!!!除非你确定你要放弃从上次提交成功后的所有工作**　,该命令会将本地源码也回退到上一版本，如果你不小心执行了这条命令，并且你没有对工作进行备份的话，那就恭喜你可以加班了！
+
+
+
+
+
 
 ## 代理
 
@@ -204,33 +225,47 @@ chmod +x ss.sh
 ./ss.sh 2>&1 | tee shadowsocks.log
 ```
 运行成功会有如下提示
-#############################################################
-# One click Install Shadowsocks(Python)
-# Intro: http://blog.whsir.com
-#
-# Author: whsir
-#
-#############################################################
+```
+###############################################
+#One click Install Shadowsocks(Python)
+
+#Intro: http://blog.whsir.com
+
+#Author: whsir
+##############################################
 
 Please input password for shadowsocks:
+
 (Default password: whsir):
+
 安装完成后显示内容如下：
 
 Congratulations, ss install completed!
+
 Your Server IP:your_server_ip
+
 Your Server Port:443
+
 Your Password:your_password
+
 Your Local IP:127.0.0.1
+
 Your Local Port:1080
+
 Your Encryption Method:aes-256-cfb
 
 Welcome to visit:blog.whsir.com
+
 Enjoy it!
+
+```
+
+
 ```
 卸载方法:
 ./ss.sh uninstall
 多端口多密码配置：
-```shell
+​```shell
 #vi /etc/shadowsocks.json
 ```
 配置
@@ -269,7 +304,8 @@ Enjoy it!
 ```
 创建启动服务：
 
-#vi /root/kcptun/start-kcptun.sh
+vi /root/kcptun/start-kcptun.sh
+
 ```shell
 #!/bin/bash
 cd /root/kcptun/
@@ -353,7 +389,7 @@ traceroute ip
 ### 查看正在使用的端口
 ```shell
 sudo docker ps
-``` 
+```
 ### 杀掉一个进程
 ```shell
 sudo docker kill container
