@@ -477,3 +477,18 @@ sudo  ufw logging on|off
 ```shell
 sudo  ufw default allow|deny
 ```
+
+
+
+### Pip
+
+忽略已经安装的package进行安装，这条命令在你需要升级一个package，但是原先安装的package无法删除的时候非常有用
+
+例如出现：
+
+Cannot uninstall 'terminado'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+
+```shell
+sudo pip3 install --ignore-installed packagename
+```
+
