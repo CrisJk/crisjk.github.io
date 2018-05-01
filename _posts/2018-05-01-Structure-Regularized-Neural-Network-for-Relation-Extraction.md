@@ -1,9 +1,10 @@
 ---
 layout: post
+title:《Structure Regularized Neural Network for Entity Relation Classification for Chinese Literature Text》阅读笔记
 author: Kuang
 categories: knowledgeGraph
 tags: RelationExtraction
-title:《Structure Regularized Neural Network for Entity Relation Classification for Chinese Literature Text》阅读笔记
+
 ---
 ### 1. Background
 
