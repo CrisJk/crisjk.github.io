@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Structure Regularized Neural Network
+title: Structure Regularized Neural Network for Entity Relation Classification for Chinese Literature Text 笔记
 author: Kuang
 categories: knowledgeGraph
 tags: RelationExtraction
@@ -18,6 +18,13 @@ tags: RelationExtraction
 总而言之，中文的文学作品往往强调”意合“，并不依赖句法结构来表达逻辑，一些文学作品在语法表达上更是天马行空；而英文强调”形合“，即通过一些特定的句法结构来显性地表达逻辑. 因此，中文文本中往往含有大量没有用的词，并且往往有复杂而又灵活的结构。而现有的很多方法主要是利用句法信息(例如词性标注、依存关系)来进行关系提取。对于中文文本来说，直接产生的句法信息往往可信度不高，质量较低，因此很难达到理想的效果.
 
 基于以上难点，本文提出的方法，利用结构正则化(Structure regularization)去除句法信息中的噪声. 通过正则化后的句法信息(最短依赖路径, Shortest Dependency Path, SDP) ，进行关系提取.
+
+
+
+
+
+
+
 
 ### 2. Related Work
 
