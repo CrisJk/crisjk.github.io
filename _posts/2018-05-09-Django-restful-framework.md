@@ -1,6 +1,6 @@
 ---
 author: Kuang
-title: Django restful framework api 学习过程中遇到的坑
+title: Django restful framework + vue.js前后端分离学习过程中遇到的坑
 categories: web
 tags: django
 
@@ -12,9 +12,9 @@ tags: django
 
 
 
+## Django 
 
-
-## Routers
+#### Django Restful framework Routers
 
 第一个坑点出现在，更新后的框架取消了一些东西，例如`from rest_framework.decorators import detail_route, list_route` 取消掉了，更改为`from rest_framework.decorators import action`
 
@@ -46,7 +46,14 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/dist-packages/rest_framework/views.py", line 480, in dispatch
     response = handler(request, *args, **kwargs)
 TypeError: 'bool' object is not callable
-
 ```
 
 解决办法:更改函数名detail成其它名字
+
+
+
+## Vue
+
+#### vue Cannot read property 'get' of undefined
+
+明显就是相关的属性没有引用。。。解决办法，在index.js中引入相关引用即可[https://github.com/pagekit/vue-resource/issues/441](https://github.com/pagekit/vue-resource/issues/441)
