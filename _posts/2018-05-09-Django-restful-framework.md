@@ -57,3 +57,36 @@ TypeError: 'bool' object is not callable
 #### vue Cannot read property 'get' of undefined
 
 明显就是相关的属性没有引用。。。解决办法，在index.js中引入相关引用即可[https://github.com/pagekit/vue-resource/issues/441](https://github.com/pagekit/vue-resource/issues/441)
+
+
+
+#### 在使用vue-for时尽可能提供key
+
+为了便于 Vue 跟踪每个节点的身份，从而重新复用(reuse)和重新排序(reorder)现有元素，你需要为每项提供唯一的 `key` 属性，从而给 Vue 一个提示。理想的 `key` 值是每项都有唯一的 id
+
+在使用 `v-for` 时，尽可能提供一个 `key`，除非迭代的 DOM 内容足够简单，或者你是故意依赖于默认行为来获得性能提升。
+
+#### 序列化QuerySet
+
+```python
+    def Serialization(self,_obj: object) -> list:
+        '''
+        _obj: objext -> list, Python 3.6新加入的特性, 用来标识这个方法接收一个对象并返回一个list
+        orm.raw序列化
+        '''
+        _list = []
+        _get = []
+        for i in _obj:
+            _list.append(i.__dict__)
+
+        for i in _list:
+            del i['_state']
+            _get.append(i)
+        return _get
+    
+    subsidySet = Vegsubsidy.objects.raw('SELECT id,year,town,sum(totalMoney) from vegSubsidy WHERE year="2017" group by town')
+     subsidySerializer=  self.Serialization(subsidySet)
+        data = subsidySerializer
+```
+
+一种将QuerySet序列化的方法，应该有更好的办法.
