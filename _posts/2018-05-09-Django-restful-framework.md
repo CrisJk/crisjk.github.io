@@ -50,6 +50,18 @@ TypeError: 'bool' object is not callable
 
 解决办法:更改函数名detail成其它名字
 
+#### Python sql raw like
+
+在使用原生sql时，用到%。只用一个%的话会报错
+
+例如 `select * from table where date like "2016%" `
+
+只需用两个%就能解决
+
+`select * from table where date like "2016%%"
+
+
+
 
 
 ## Vue
