@@ -102,3 +102,17 @@ TypeError: 'bool' object is not callable
 ```
 
 一种将QuerySet序列化的方法，应该有更好的办法.
+
+
+
+#### 将vue-cli项目部署
+
+vue-cli整合webpack的项目，部署到服务器上，若要用域名访问，则需要设置
+
+```
+this.disableHostCheck = true;
+```
+
+当然有更加安全的做法
+
+[https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html](https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html)
