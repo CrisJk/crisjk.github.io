@@ -116,3 +116,15 @@ this.disableHostCheck = true;
 当然有更加安全的做法
 
 [https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html](https://tonghuashuo.github.io/blog/webpack-dev-server-invalid-host-header.html)
+
+#### 生成的js文件过大
+
+build的参数中配置启用gzip压缩，然后nginx中也要启用动态压缩
+
+#### 无法热更新
+
+首先看看webpack的配置，看是否启用热更新，启动项目(例如 npm run dev)时，可以看到一个inline参数，并且配置文件中也有个hot=true，这两个好像就是和热更新有关的。（这些我都是用vue-cli自动生成的，没改过，也不能保证我说的是正确的)
+
+更一般的，问题可能出在IDE上，很多IDE有safe write模式，例如webstorm和pycharm。网上很多人只说在webstorm里出现的问题。我是在pycharm里写的，并且刚开始是能热更新的，后来可能不小心设置了safe write才不能热更新。因此本来很容易解决的问题折腾了半天（用pycharm来写前端的奇葩估计也没几个，我完全就是因为IDE左侧的树形结构才用的IDE，所以没有再单独装个webstorm)。
+
+总之，关闭IDE的safe write解决了无法热更新的问题.
