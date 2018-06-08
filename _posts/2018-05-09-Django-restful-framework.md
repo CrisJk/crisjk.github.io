@@ -103,7 +103,13 @@ TypeError: 'bool' object is not callable
 
 一种将QuerySet序列化的方法，应该有更好的办法.
 
+#### 使用双花括号插值不换行
 
+双花括号引用data时，是不会换行的，解决方法是使用v-html
+
+```html
+<span v-html="name"></span>
+```
 
 #### 将vue-cli项目部署
 
