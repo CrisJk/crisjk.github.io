@@ -1,4 +1,11 @@
-# Jupyter的运行结果与本地的运行结果不符
+---
+author: Kuang
+title: Jupyter的运行结果与本地的运行结果不符
+categories: tools
+tags: jupyter
+
+---
+
 
 于是我花了近1个小时的时间排查问题，我的内心是崩溃的!!!
 
