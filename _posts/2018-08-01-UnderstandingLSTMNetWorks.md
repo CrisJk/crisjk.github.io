@@ -1,7 +1,7 @@
 ---
 author: Kuang
 title: Understanding LSTM Networks
-categories: deep learning
+categories: deeplearning
 tags: theory
 
 ---
