@@ -129,7 +129,7 @@ sigmoid层的输出为一个0~1之间的数字，描述每个组件有多少信�
 
 对应到语言模型的例子，这个过程就是遗忘掉旧的主体的性别信息，加上新的主体的性别信息，如我们之前的步骤所决定的那样。
 
-![](../fig/LSTM3-focus-C.png)
+![](https://raw.githubusercontent.com/CrisJk/crisjk.github.io/master/fig/LSTM3-focus-C.png)
 
 **最后**，我们需要决定输出什么东西。最后的输出基于cell state,但经过一定过滤。首先，利用一个sigmoid层决定cell state的哪些部分需要被输出。然后将cell state输入到一个正切激活函数(将输出值压到-1~1之间)，将正切函数的输出和sigmoid函数的输出相乘，得到输出。
 
