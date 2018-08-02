@@ -1,7 +1,7 @@
 ---
 author: Kuang
 title: Jupyter的运行结果与本地的运行结果不符
-categories: tools
+categories: Tools
 tags: jupyter
 
 ---
