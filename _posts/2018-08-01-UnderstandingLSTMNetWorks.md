@@ -19,7 +19,7 @@ tags: theory
 
 循环神经网络解决了这一问题，它们在网络中加入循环，使得信息具有一定的持久性。
 
-![](../fig/RNN-rolled.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/RNN-rolled.png)
 
 ​						     	**Recurrent Neural Networks have loops**
 
@@ -27,7 +27,7 @@ tags: theory
 
 实际上，该网络和普通的神经网络并无不同，**循环神经网络可以看作是同一网络块的多个复制** ，每个网络块将信息传递给它的下一个块。若将上图的循环展开，则如下图所示。
 
-![](../fig/RNN-unrolled.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/RNN-unrolled.png)
 
 ​							**An unrolled recurrent neural network**
 
@@ -43,13 +43,13 @@ RNNs的一个观点是，优化当前任务可以利用先前的信息，例如�
 
 对于只需要利用最近一段时间的任务，例如，一个预测下文的语言模型，只需要根据上一个单词来预测当前单词。假设我们现在预测"the clouds are in the ***sky***,"中单词的下一个单词，我们不需要很多的上下文。这种情况下，相关信息之间的间距很小，RNNs的效果比较好。
 
-![](../fig/RNN-shorttermdepdencies.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master//fig/RNN-shorttermdepdencies.png)
 
 但是很多情况下，我们需要更多的上下文信息。例如我们在预测"I grew up in France... I speak fluent ***French***" 。近处的上下文信息告诉我们，下一个单词是某种语言，但是如果没有更多的上下文信息(到France)，我们无法确定到底是何种语言。
 
 当需要的信息距离当前很远时，RNNs就无法捕捉到这些有用的信息。
 
-![](../fig/RNN-longtermdependencies.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/RNN-longtermdependencies.png)
 
 
 
@@ -79,19 +79,19 @@ $$h^{(t)} = Q^T\Lambda^t Qh^{(0)}$$
 
 LSTM是一种特殊的RNN,能够处理长期依赖问题，该模型默认记忆长期的信息。所有的循环神经网络由重复的神经网络模块组成。在一般的RNNs中，重复的模块结构非常简单，例如仅仅是一个tanh激活层。
 
-![](../fig/LSTM3-SimpleRNN.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-SimpleRNN.png)
 
 ​				**The repeating module in a standard RNN contains a single layer**
 
 LSTMs同样有着相同的链式结构，但是内部结构有所不同。与一般的RNNs的单层结构不同的是，LSTMs每个重复单元内部有4层，这4层以一种非常巧妙的方式连接。
 
-![](../fig/LSTM3-chain.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-chain.png)
 
 ​				**The repeating module in an LSTM contains four interacting layers.**
 
 接下来详细解释LSTM单元的内部构造，为了方便说明，事先规定如下符号。
 
-![](../fig/LSTM2-notation.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM2-notation.png)
 
 ## The Core Idea Behind LSTMs
 
@@ -99,11 +99,11 @@ LSTMs的主要贡献在于引入自循环的巧妙构思，已产生梯度长时
 
 cell state类似于传送带。它贯穿整个链式结构，仅仅使用一些简单的线性操作连接。这样信息在cell state上流动就不会发生较大的改变。
 
-![](../fig/LSTM3-C-line.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-C-line.png)
 
 得益于一种被称为“门”的结构，LSTM能够增加或删除传送到cell state的信息。“门”可以有选择地让信息通过。“门”由sigmoid层和乘法操作构成。
 
-![](../fig/LSTM3-gate.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-gate.png)
 
 sigmoid层的输出为一个0~1之间的数字，描述每个组件有多少信息应该通过。0表示不允许任何信息通过，1表示允许所有的信息通过。
 
@@ -115,13 +115,13 @@ sigmoid层的输出为一个0~1之间的数字，描述每个组件有多少信�
 
 回忆刚才预测下一个单词的语言模型。在这样一个问题中，当前的cell state可能包含了当前主体的性别信息，利用该信息，可以选择正确的物主代词。当前词变成另一个主体后，我们想要遗忘掉先前主体的性别信息，这就是遗忘门的作用。
 
-![](../fig/LSTM3-focus-f.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-focus-f.png)
 
 **LSTM的下一步**是决定我们要存储哪些新的信息到cell state中。由”输入门“决定。输入门由两部分组成，首先，一个sigmoid层决定哪些信息被更新。接着，一个tanh激活函数得到一个新的候选值$\tilde{C}_t$ ，$\tilde C_{t}$ 中每个数根据sigmoid的输出决定是否加入到cell state中 。也就是说，最后，将sigmoid的输出和正切函数的输出结合，更新得到新的cell state。
 
 仍然使用上文中提到的语言模型作为例子 ，我们想将新的主体的性别信息加入到cell state中，来替换被遗忘的旧的性别信息。
 
-![](../fig/LSTM3-focus-i.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-focus-i.png)
 
 那么是如何将旧的cell state$C_{t-1}$更新得到新的cell state $C_t$呢？
 
@@ -135,7 +135,7 @@ sigmoid层的输出为一个0~1之间的数字，描述每个组件有多少信�
 
 对应到语言模型的例子，因为当前看到的是主语，那么我们可能期望输出和动词相关的信息，例如，输出主语是单数还是复数。这样我们就能知道接下来的动词的形式。
 
-![](../fig/LSTM3-focus-o.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-focus-o.png)
 
 ## Variants on Long Short Term Memory
 
@@ -143,17 +143,17 @@ sigmoid层的输出为一个0~1之间的数字，描述每个组件有多少信�
 
 一种非常流行的LSTM变种，由[Gers & Schmidhuber (2000)](ftp://ftp.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf)提出，该LSTM加入"peephole connnections"。这意味着gate layer可以直接看到cell state。
 
-![](../fig/LSTM3-var-peepholes.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-var-peepholes.png)
 
 上图所示所有的门都添加了peephole，但有些论文中只在部分门添加peephole。
 
 另一个变种是将遗忘门和输入门组合，而不是分开决定哪些需要遗忘哪些需要添加。只遗忘我们将要用信息替换旧信息的部分。只在我们需要遗忘的地方加入新的信息。
 
-​	![](../fig/LSTM3-var-tied.png)
+​	![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-var-tied.png)
 
 另一个更加dramatic的变种就是大名鼎鼎的GRU(Gated Recurrent Unit)[Cho, et al. (2014)](http://arxiv.org/pdf/1406.1078v3.pdf)。 GRU将遗忘门和输入们组合成一个"更新门"。同时，GRU还将cell state和hidden state结合，除此之外一些其它的改动。GRU要比普通的LSTM模型简单，并且越来越受欢迎。
 
-![](../fig/LSTM3-var-GRU.png)
+![](https://github.com/CrisJk/crisjk.github.io/blob/master/fig/LSTM3-var-GRU.png)
 
 另外一些LSTM,改动比较大，例如Depth Gated RNNs by [Yao, et al. (2015)](http://arxiv.org/pdf/1508.03790v2.pdf). 还有一些完全不同的方法，例如
 
