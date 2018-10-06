@@ -25,7 +25,7 @@ type: page
 
 ## 友情链接
 
-[tankcat](http://tankcat2.com/) \| [Kakapo](https://drifloon.github.io/) \| [mjqin](http://mjqin.github.io/)
+[tankcat 学术大牛](http://tankcat2.com/) \| [Kakapo ACM超牛逼](https://drifloon.github.io/) \| [mjqin 大神学长](http://mjqin.github.io/)|[williamjing 前端大佬](https://www.williamjing.com/)
 ## Comments
 
 {% include comments.html %}
