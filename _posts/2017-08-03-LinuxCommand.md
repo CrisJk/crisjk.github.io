@@ -492,3 +492,10 @@ Cannot uninstall 'terminado'. It is a distutils installed project and thus we ca
 sudo pip3 install --ignore-installed packagename
 ```
 
+### docker
+大多数docker不支持中文，要想支持中文，运行如下命令.注意配置只在docker容器的生命周期生效，因为重启docker后要重新执行命令
+```shell
+echo 'export LANG="en_US.UTF-8"' >> /etc/profile
+source /etc/profile
+```
+
